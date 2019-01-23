@@ -3,7 +3,7 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 $dir = [Environment]::GetFolderPath("MyDocuments")
 
 $date = (Get-Date -Format o).split(".")[0].Replace(":",".")
-wget "https://ninite.com/.net4.7.2-7zip-air-chrome-java8-shockwave-silverlight-teamviewer14/ninite.exe" -OutFile "$dir\ninite_$date.exe"
+wget "https://ninite.com/.net4.7.2-7zip-air-chrome-java8-shockwave-silverlight-teamviewer/ninite.exe" -OutFile "$dir\ninite_$date.exe"
 
 Start-Process -FilePath "$dir\ninite_$date.exe" -Verb runAs
 
