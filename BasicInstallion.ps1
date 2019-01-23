@@ -17,7 +17,7 @@ Get-AppxPAckage *C27EB4BA.DropboxOEM* | remove-appxpackage
 Get-AppxPackage *Amazon.com.Amazon* | remove-appxpackage
 Get-AppxPackage *5A894077.McAfeeSecurity* | remove-appxpackage
 Get-AppxPackage *MicrosoftSolitaireCollection* | Remove-AppxPackage
-Get-AppcPackage *ThumbmunkeysLtd.PhototasticCollage* | Remove-AppxPackage
+Get-AppxPackage *ThumbmunkeysLtd.PhototasticCollage* | Remove-AppxPackage
 
 Start-Sleep -Seconds 25
 
