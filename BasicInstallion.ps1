@@ -1,12 +1,13 @@
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
 
 function installProcess(){
-    if($(Get-Process -Name Ninite -ErrorAction SilentlyContinue -ErrorVariable errorNinite) -and $(Get-Process -Name readerdc_nl_xa_crd_install -ErrorAction SilentlyContinue -ErrorVariable errorReaderDC)){
+    if($(Get-Process -Name Ninite -ErrorAction SilentlyContinue -ErrorVariable errorNinite) -or $(Get-Process -Name readerdc_nl_xa_crd_install -ErrorAction SilentlyContinue -ErrorVariable errorReaderDC)){
         return $true
     }else{
         $events = (Get-EventLog -LogName Application -EntryType Information -InstanceId 11707 -Source MsiInstaller -After $time -ErrorAction SilentlyContinue| where {$_.Message -like "*Adobe Acrobat Reader DC*"} -ErrorAction SilentlyContinue)
-        if($events){
+        if(!$events){
             installAdobeReaderDC
+            Write-Host "Retrying to install Adobe Reader DC"
             return $true
         }else{
             return $false
@@ -14,6 +15,10 @@ function installProcess(){
     }
 }
 function installAdobeReaderDC(){
+    write-host "Downloading Adobe Reader DC"
+    $url = 'https://admdownload.adobe.com/bin/live/readerdc_nl_xa_crd_install.exe'
+    wget $url -OutFile "$dir\readerdc_nl_xa_crd_install.exe"
+    Write-Host "Installing Adobe Rader DC"
     Start-Process -FilePath "$dir\readerdc_nl_xa_crd_install.exe" -Verb runAs
 }
 
@@ -43,12 +48,11 @@ $uwp | foreach {
     $i++
 }
 
-$url = 'https://admdownload.adobe.com/bin/live/readerdc_nl_xa_crd_install.exe'
-wget $url -OutFile "$dir\readerdc_nl_xa_crd_install.exe"
 installAdobeReaderDC
 
-Start-Sleep -Seconds 60
 Write-host "Waiting"
+Start-Sleep -Seconds 60
+
 do{
     Write-Host '.' -NoNewline -ForegroundColor Magenta
     Start-Sleep -Seconds 10
