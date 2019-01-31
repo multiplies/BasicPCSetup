@@ -53,6 +53,8 @@ do{
     Start-Sleep -Seconds 10
 }while(installProcess)
 
-
+wget "https://raw.githubusercontent.com/multiplies/DefaultAppAssociations/master/DefaultAppAssociations.xml" -OutFile "$dir\DefaultAppAssociations.xml"
+$DefaultAppAssociations = "$dir\DefaultAppAssociations.xml"
+dism /online /Import-DefaultAppAssociations:"$DefaultAppAssociations"
 
 remove-item -Path $dir -Force -Recurse
