@@ -1,12 +1,13 @@
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
 
 function installProcess(){
-    if($(Get-Process -Name Ninite -ErrorAction SilentlyContinue -ErrorVariable errorNinite) -or $(Get-Process -Name readerdc_nl_xa_crd_install -ErrorAction SilentlyContinue -ErrorVariable errorReaderDC)){
+    if($(Get-Process -Name Ninite -ErrorAction SilentlyContinue -ErrorVariable errorNinite) -and $(Get-Process -Name readerdc_nl_xa_crd_install -ErrorAction SilentlyContinue -ErrorVariable errorReaderDC)){
         return $true
     }else{
         $events = (Get-EventLog -LogName Application -EntryType Information -InstanceId 11707 -Source MsiInstaller -After $time -ErrorAction SilentlyContinue| where {$_.Message -like "*Adobe Acrobat Reader DC*"} -ErrorAction SilentlyContinue)
         if($events){
             installAdobeReaderDC
+            return $true
         }else{
             return $false
         }
