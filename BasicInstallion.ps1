@@ -71,4 +71,4 @@ dism /online /Import-DefaultAppAssociations:"$DefaultAppAssociations"
 
 remove-item -Path $dir -Force -Recurse
 
-Rename-Computer -NewName $newName
+Rename-Computer -NewName $newName -Restart
