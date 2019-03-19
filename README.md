@@ -6,7 +6,7 @@ It also sets some settings correct.
 ## Usage
 Download the the powershell script and run it with powershell.
 
-[**download here**]('https://github.com/multiplies/BasicPCSetup/releases/download/v1.0/BasicInstallion.ps1')
+[**download here**](https://github.com/multiplies/BasicPCSetup/releases/download/v1.0/BasicInstallion.ps1)
 
 After downloading unzip the file and run BasicPCSetup.ps1.
 
