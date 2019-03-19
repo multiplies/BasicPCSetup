@@ -5,10 +5,10 @@ It also sets some settings correct.
 
 ## Usage
 Download the the powershell script and run it with powershell.
-[download here]('https://github.com/multiplies/BasicPCSetup/releases/download/v1.0/BasicInstallion.ps1')
+[**download here**]('https://github.com/multiplies/BasicPCSetup/releases/download/v1.0/BasicInstallion.ps1')
 After downloading unzip the file and run BasicPCSetup.ps1.
 
-![alt text](https://github.com/multiplies/BasicPCSetup/raw/master/images/RunScript.gif "GIF how to run the script")
+![alt text](https://github.com/multiplies/BasicPCSetup/raw/master/images/RunScript.gif )
 
 ## Installed software
 This script installs programs from different sources.
