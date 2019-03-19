@@ -4,9 +4,7 @@ This is a powershell script that installs basic software and removes bloatware (
 It also sets some settings correct.
 
 ## Usage
-Download the the powershell script and run it with powershell.
-[**Download here.**](https://github.com/multiplies/BasicPCSetup/releases/download/v1.0/BasicInstallion.ps1)
-After downloading unzip the file and run BasicPCSetup.ps1.
+[**Download**](https://github.com/multiplies/BasicPCSetup/releases/download/v1.0/BasicInstallion.ps1) the the powershell script and run it with powershell.
 
 ![alt text](https://github.com/multiplies/BasicPCSetup/raw/master/images/RunScript.gif )
 
