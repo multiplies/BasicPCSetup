@@ -5,9 +5,7 @@ It also sets some settings correct.
 
 ## Usage
 Download the the powershell script and run it with powershell.
-
-[**download here**](https://github.com/multiplies/BasicPCSetup/releases/download/v1.0/BasicInstallion.ps1)
-
+[**Download here**](https://github.com/multiplies/BasicPCSetup/releases/download/v1.0/BasicInstallion.ps1)
 After downloading unzip the file and run BasicPCSetup.ps1.
 
 ![alt text](https://github.com/multiplies/BasicPCSetup/raw/master/images/RunScript.gif )
@@ -31,7 +29,7 @@ Adobe reader Dc gets downloaded from Adobe and then installed.
 
 ## Removing Default UWP Apps
 The scipt downloads a file with different UWP Apps to delete.
-The list can be found [here]('https://github.com/multiplies/uwp_remove_list/blob/master/uwp.txt').
+The list can be found [here](https://github.com/multiplies/uwp_remove_list/blob/master/uwp.txt).
 
 ## Renaming PC Name
 When the script runs it'll ask to enter a new PC name, when the script ran it will reboot the PC.
