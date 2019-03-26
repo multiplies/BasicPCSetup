@@ -55,10 +55,11 @@ $uwp | foreach {
     $i++
 }
 
+Start-Sleep -Seconds 60
+
 installAdobeReaderDC
 
 Write-host "Waiting"
-Start-Sleep -Seconds 60
 
 do{
     Write-Host '.' -NoNewline -ForegroundColor Magenta
